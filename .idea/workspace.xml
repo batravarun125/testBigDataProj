@@ -255,8 +255,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.debuggg" />
       <item itemvalue="Python.cifar" />
+      <item itemvalue="Python.debuggg" />
       <item itemvalue="Python.test" />
     </list>
     <recent_temporary>
