@@ -15,7 +15,9 @@ sys.path.append(repo_root)
 # from IPython.display import display
 # from ipywidgets import Layout
 # from ipywidgets import widgets
-# from matplotlib import pyplot as plt
+from matplotlib import pyplot as plt
+plt.switch_backend('agg')
+
 # import numpy as np
 # import tqdm
 
@@ -204,8 +206,32 @@ def main():
         num_classes = 100
 
 
+    # trainset = dataloader(root='./data', train=True, download=True, transform=transform_train)
+    # version = 'v4'
+    # ddata, labb = load_new_test_data(version)
+    # labb = labb.tolist()
+    # trainset.train_labels = list( trainset.train_labels , labb.tolist())
+    # trainset.train_data = np.concatenate(trainset.train_data, data )
+    # trainloader = data.DataLoader(trainset, batch_size=args.train_batch, shuffle=True, num_workers=args.workers)
+
+
     trainset = dataloader(root='./data', train=True, download=True, transform=transform_train)
+    version = 'v4'
+    ddata, labb = load_new_test_data(version)
+    labb = labb.tolist()
+    aa = trainset.train_data
+    bb = trainset.train_labels
+    trainset.train_labels = list(bb + labb)
+    count = 0
+    for item in ddata:
+        print ("a")
+
+        count+=1
+    varun = np.append(aa,ddata)
+    varun2 = varun.reshape(52021, 32, 32 ,3)
+    trainset.train_data = varun2
     trainloader = data.DataLoader(trainset, batch_size=args.train_batch, shuffle=True, num_workers=args.workers)
+
 
     testset = dataloader(root='./data', train=False, download=False, transform=transform_test)
     version = 'v4'
