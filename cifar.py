@@ -20,7 +20,7 @@ plt.switch_backend('agg')
 
 # import numpy as np
 # import tqdm
-
+import random
 import io
 import json
 import os
@@ -216,27 +216,73 @@ def main():
 
 
     trainset = dataloader(root='./data', train=True, download=True, transform=transform_train)
+
+
     version = 'v4'
     ddata, labb = load_new_test_data(version)
     labb = labb.tolist()
+
+    labb1 = labb[:1100]
+    labb2 = labb[1100:]
+
     aa = trainset.train_data
     bb = trainset.train_labels
-    trainset.train_labels = list(bb + labb)
-    count = 0
-    for item in ddata:
-        print ("a")
+    trainset.train_labels = list(bb + labb1)
+    lollist = list(bb + labb1)
+    #
+    # count = 0
+    # for item in ddata:
+    #     #print ("a")
+    #
+    #     count+=1
+    #
+    # linearddata = ddata.flatten()
+    ddatalist = ddata.tolist()
+    ddatalist_left = ddatalist[:1100]
+    ddata_left_ndarray = np.asarray(ddatalist_left,dtype=np.uint8)
+    ddata_left_ndarray.reshape(1100,32,32,3)
+    varun = np.append(aa,ddata_left_ndarray)
+    varun2 = varun.reshape(51100, 32, 32 ,3)
+    varun3 = varun2
+    ttt = len(varun)
+    final_train_data =  np.ndarray(shape=(51100,32,32,3), dtype=np.uint8, order='F')
+    final_train_label = []
+    for i in range(0, 51100):
+        final_train_label.append(-1)
+    for i in range(varun2.shape[0]):
+        x = random.randint(0,51099)
+        while(final_train_label[x]!=-1):
+            x = random.randint(0, 51099)
+        final_train_label[x] = lollist[i]
+        final_train_data[x] = varun2[i]
 
-        count+=1
-    varun = np.append(aa,ddata)
-    varun2 = varun.reshape(52021, 32, 32 ,3)
-    trainset.train_data = varun2
+    trainset.train_data = final_train_data
+    trainset.train_labels = final_train_label
+
+
+
+    ddatalist_right = ddatalist[1100:]
+    ddata_right_ndarray = np.asarray(ddatalist_right, dtype=np.uint8)
+    ddata_right_ndarray.reshape(921, 32, 32, 3)
+
+    #
+    # varun = varun.tolist()
+    # lollist, varun
+    # np.random.shuffle(varun)
+    #
+    #
+    # # varun3 = varun.reshape(156979200-)
+    # varun2 = varun.reshape(51100, 32, 32 ,3)
+    # trainset.train_data = varun2
+    # trainset.train_labels = lollist
     trainloader = data.DataLoader(trainset, batch_size=args.train_batch, shuffle=True, num_workers=args.workers)
-
+    #
 
     testset = dataloader(root='./data', train=False, download=False, transform=transform_test)
-    version = 'v4'
-    testset.test_data, labb = load_new_test_data(version)
-    testset.test_labels = labb.tolist()
+    # version = 'v4'
+    # testset.test_data, labb = load_new_test_data(version)
+    testset.test_labels = labb2
+    testset.test_data = ddata_right_ndarray
     testloader = data.DataLoader(testset, batch_size=args.test_batch, shuffle=False, num_workers=args.workers)
     # Model
 
