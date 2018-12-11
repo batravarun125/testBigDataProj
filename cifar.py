@@ -218,72 +218,72 @@ def main():
     trainset = dataloader(root='./data', train=True, download=True, transform=transform_train)
 
 
-    version = 'v4'
-    ddata, labb = load_new_test_data(version)
-    labb = labb.tolist()
-
-    labb1 = labb[:1100]
-    labb2 = labb[1100:]
-
-    aa = trainset.train_data
-    bb = trainset.train_labels
-    trainset.train_labels = list(bb + labb1)
-    lollist = list(bb + labb1)
+    # version = 'v4'
+    # ddata, labb = load_new_test_data(version)
+    # labb = labb.tolist()
     #
-    # count = 0
-    # for item in ddata:
-    #     #print ("a")
+    # labb1 = labb[:1100]
+    # labb2 = labb[1100:]
     #
-    #     count+=1
+    # aa = trainset.train_data
+    # bb = trainset.train_labels
+    # trainset.train_labels = list(bb + labb1)
+    # lollist = list(bb + labb1)
     #
-    # linearddata = ddata.flatten()
-    ddatalist = ddata.tolist()
-    ddatalist_left = ddatalist[:1100]
-    ddata_left_ndarray = np.asarray(ddatalist_left,dtype=np.uint8)
-    ddata_left_ndarray.reshape(1100,32,32,3)
-    varun = np.append(aa,ddata_left_ndarray)
-    varun2 = varun.reshape(51100, 32, 32 ,3)
-    varun3 = varun2
-    ttt = len(varun)
-    final_train_data =  np.ndarray(shape=(51100,32,32,3), dtype=np.uint8, order='F')
-    final_train_label = []
-    for i in range(0, 51100):
-        final_train_label.append(-1)
-    for i in range(varun2.shape[0]):
-        x = random.randint(0,51099)
-        while(final_train_label[x]!=-1):
-            x = random.randint(0, 51099)
-        final_train_label[x] = lollist[i]
-        final_train_data[x] = varun2[i]
-
-    trainset.train_data = final_train_data
-    trainset.train_labels = final_train_label
-
-
-
-    ddatalist_right = ddatalist[1100:]
-    ddata_right_ndarray = np.asarray(ddatalist_right, dtype=np.uint8)
-    ddata_right_ndarray.reshape(921, 32, 32, 3)
-
-    #
-    # varun = varun.tolist()
-    # lollist, varun
-    # np.random.shuffle(varun)
-    #
-    #
-    # # varun3 = varun.reshape(156979200-)
+        # count = 0
+        # for item in ddata:
+        #     #print ("a")
+        #
+        #     count+=1
+        #
+        # linearddata = ddata.flatten()
+    # ddatalist = ddata.tolist()
+    # ddatalist_left = ddatalist[:1100]
+    # ddata_left_ndarray = np.asarray(ddatalist_left,dtype=np.uint8)
+    # ddata_left_ndarray.reshape(1100,32,32,3)
+    # varun = np.append(aa,ddata_left_ndarray)
     # varun2 = varun.reshape(51100, 32, 32 ,3)
-    # trainset.train_data = varun2
-    # trainset.train_labels = lollist
+    # varun3 = varun2
+    # ttt = len(varun)
+    # final_train_data =  np.ndarray(shape=(51100,32,32,3), dtype=np.uint8, order='F')
+    # final_train_label = []
+    # for i in range(0, 51100):
+    #     final_train_label.append(-1)
+    # for i in range(varun2.shape[0]):
+    #     x = random.randint(0,51099)
+    #     while(final_train_label[x]!=-1):
+    #         x = random.randint(0, 51099)
+    #     final_train_label[x] = lollist[i]
+    #     final_train_data[x] = varun2[i]
+    #
+    # trainset.train_data = final_train_data
+    # trainset.train_labels = final_train_label
+
+    #
+    #
+    # ddatalist_right = ddatalist[1100:]
+    # ddata_right_ndarray = np.asarray(ddatalist_right, dtype=np.uint8)
+    # ddata_right_ndarray.reshape(921, 32, 32, 3)
+
+        #
+        # varun = varun.tolist()
+        # lollist, varun
+        # np.random.shuffle(varun)
+        #
+        #
+        # # varun3 = varun.reshape(156979200-)
+        # varun2 = varun.reshape(51100, 32, 32 ,3)
+        # trainset.train_data = varun2
+        # trainset.train_labels = lollist
     trainloader = data.DataLoader(trainset, batch_size=args.train_batch, shuffle=True, num_workers=args.workers)
     #
 
     testset = dataloader(root='./data', train=False, download=False, transform=transform_test)
     # version = 'v4'
-    # testset.test_data, labb = load_new_test_data(version)
-    testset.test_labels = labb2
-    testset.test_data = ddata_right_ndarray
-    testloader = data.DataLoader(testset, batch_size=args.test_batch, shuffle=False, num_workers=args.workers)
+        # testset.test_data, labb = load_new_test_data(version)
+    # testset.test_labels = labb2
+    # testset.test_data = ddata_right_ndarray
+    testloader = data.DataLoader(trainset, batch_size=1, shuffle=False, num_workers=args.workers)
     # Model
 
     print("==> creating model '{}'".format(args.arch))
@@ -348,7 +348,7 @@ def main():
         test_loss, test_acc = test(testloader, model, criterion, start_epoch, use_cuda)
         print(' Test Loss:  %.8f, Test Acc:  %.2f' % (test_loss, test_acc))
         return
-
+    dict = {}
     # Train and val
     for epoch in range(start_epoch, args.epochs):
         adjust_learning_rate(optimizer, epoch)
@@ -356,7 +356,7 @@ def main():
         print('\nEpoch: [%d | %d] LR: %f' % (epoch + 1, args.epochs, state['lr']))
 
         train_loss, train_acc = train(trainloader, model, criterion, optimizer, epoch, use_cuda)
-        test_loss, test_acc = test(testloader, model, criterion, epoch, use_cuda)
+        test_loss, test_acc, dict = test(trainloader, model, criterion, epoch, use_cuda)
 
         # append logger file
         logger.append([state['lr'], train_loss, test_loss, train_acc, test_acc])
@@ -371,7 +371,7 @@ def main():
                 'best_acc': best_acc,
                 'optimizer' : optimizer.state_dict(),
             }, is_best, checkpoint=args.checkpoint)
-
+    print (dict)
     logger.close()
     logger.plot()
     savefig(os.path.join(args.checkpoint, 'log.eps'))
@@ -445,7 +445,7 @@ def test(testloader, model, criterion, epoch, use_cuda):
 
     # switch to evaluate mode
     model.eval()
-
+    dict = {}
     end = time.time()
     bar = Bar('Processing', max=len(testloader))
     for batch_idx, (inputs, targets) in enumerate(testloader):
@@ -458,6 +458,9 @@ def test(testloader, model, criterion, epoch, use_cuda):
 
         # compute output
         outputs = model(inputs)
+        varoutput = softmax(outputs)
+
+        dict[batch_idx] = np.max(varoutput)
         loss = criterion(outputs, targets)
 
         # measure accuracy and record loss
@@ -484,8 +487,11 @@ def test(testloader, model, criterion, epoch, use_cuda):
                     )
         bar.next()
     bar.finish()
-    return (losses.avg, top1.avg)
-
+    return (losses.avg, top1.avg,dict)
+def softmax(x):
+    """Compute softmax values for each sets of scores in x."""
+    e_x = np.exp(x - np.max(x))
+    return e_x / e_x.sum()
 def save_checkpoint(state, is_best, checkpoint='checkpoint', filename='checkpoint.pth.tar'):
     filepath = os.path.join(checkpoint, filename)
     torch.save(state, filepath)
