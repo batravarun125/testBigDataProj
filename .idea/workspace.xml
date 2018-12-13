@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef7fb9ae-75e5-4a9a-b0a8-75a349391112" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cifar.py" beforeDir="false" afterPath="$PROJECT_DIR$/cifar.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,8 +15,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cifar.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="549" lean-forward="true" selection-start-line="549" selection-end-line="549" />
+            <state relative-caret-position="-1161">
+              <caret line="211" column="47" lean-forward="true" selection-start-line="211" selection-start-column="47" selection-end-line="211" selection-end-column="47" />
               <folding>
                 <element signature="e#70#107#0" expanded="true" />
               </folding>
@@ -302,27 +300,27 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/cifar.py</url>
-          <line>551</line>
+          <line>543</line>
           <option name="timeStamp" value="45" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/cifar.py</url>
-          <line>554</line>
+          <line>546</line>
           <option name="timeStamp" value="46" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/cifar.py</url>
-          <line>542</line>
+          <line>534</line>
           <option name="timeStamp" value="47" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/cifar.py</url>
-          <line>544</line>
+          <line>536</line>
           <option name="timeStamp" value="48" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/cifar.py</url>
-          <line>548</line>
+          <line>540</line>
           <option name="timeStamp" value="49" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -337,12 +335,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/cifar.py</url>
-          <line>583</line>
+          <line>575</line>
           <option name="timeStamp" value="56" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/cifar.py</url>
-          <line>466</line>
+          <line>458</line>
           <option name="timeStamp" value="60" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -352,7 +350,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/cifar.py</url>
-          <line>412</line>
+          <line>414</line>
           <option name="timeStamp" value="63" />
         </line-breakpoint>
       </breakpoints>
@@ -545,8 +543,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cifar.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="549" lean-forward="true" selection-start-line="549" selection-end-line="549" />
+        <state relative-caret-position="-1161">
+          <caret line="211" column="47" lean-forward="true" selection-start-line="211" selection-start-column="47" selection-end-line="211" selection-end-column="47" />
           <folding>
             <element signature="e#70#107#0" expanded="true" />
           </folding>

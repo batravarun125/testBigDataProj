@@ -295,11 +295,13 @@ def main():
 
 
     testset = dataloader(root='./data', train=False, download=False, transform=transform_test)
-    # version = 'v4'
+    version = 'v4'
         # testset.test_data, labb = load_new_test_data(version)
     # testset.test_labels = labb2
     # testset.test_data = ddata_right_ndarray
-    testloader = data.DataLoader(testset, batch_size=1, shuffle=False, num_workers=args.workers)
+
+    ddata, labb = load_new_test_data(version)
+    testloader = data.DataLoader(testset, batch_size=args.test_batch, shuffle=False, num_workers=args.workers)
     # Model
 
     print("==> creating model '{}'".format(args.arch))
@@ -364,15 +366,15 @@ def main():
         test_loss, test_acc = test(testloader, model, criterion, start_epoch, use_cuda)
         print(' Test Loss:  %.8f, Test Acc:  %.2f' % (test_loss, test_acc))
         return
-    dict = {}
+    # dict = {}
     # Train and val
-    for epoch in range(start_epoch, 1):
+    for epoch in range(start_epoch, args.epochs):
         adjust_learning_rate(optimizer, epoch)
 
         print('\nEpoch: [%d | %d] LR: %f' % (epoch + 1, args.epochs, state['lr']))
 
         train_loss, train_acc = train(trainloader, model, criterion, optimizer, epoch, use_cuda)
-        test_loss, test_acc, dict = test(testloader, model, criterion, epoch, use_cuda)
+        test_loss, test_acc = test(testloader, model, criterion, epoch, use_cuda)
 
         # append logger file
         logger.append([state['lr'], train_loss, test_loss, train_acc, test_acc])
@@ -392,50 +394,40 @@ def main():
 
 
 
-    print (len(dict))
-    sorted_x = sorted(dict.items(), key=operator.itemgetter(1))
-
-
-
-    final_train_data =  np.ndarray(shape=(10000,32,32,3), dtype=np.uint8, order='F')
-    final_train_label = []
-    for i in range(0, 10000):
-        final_train_label.append(-1)
-    cc=0
-    for k in sorted_x:
-        print(k[0])
-        print(type(k[0]))
-        final_train_label[cc] = trainset.train_labels[k[0]]
-        final_train_data[cc] = trainset.train_data[k[0]]
-        cc += 1
-    haha = final_train_data.reshape(10000, 32, 32 ,3)
-    print (haha)
-    print("")
-    trainset.train_data = final_train_data
-    trainset.train_labels = final_train_label
-    trainloader = data.DataLoader(trainset, batch_size=args.train_batch, shuffle=False, num_workers=args.workers)
-
-    version = 'v4'
-    ddata, labb = load_new_test_data(version)
-    testset.test_labels = labb
-    ddata_list = ddata.tolist()
-    ddata_array = np.asarray(ddata_list, dtype=np.int64)
-    ddata_array.reshape(2021,32,32,3)
-    testset.test_data = ddata_array
-
-
-    testloader = data.DataLoader(testset, batch_size=args.test_batch, shuffle=False, num_workers=args.workers)
-
-
-    # for i in range(varun2.shape[0]):
-    #     x = random.randint(0,51099)
-    #     while(final_train_label[x]!=-1):
-    #         x = random.randint(0, 49999)
-    #     final_train_label[x] = lollist[i]
-    #     final_train_data[x] = varun2[i]
+    # print (len(dict))
+    # sorted_x = sorted(dict.items(), key=operator.itemgetter(1))
     #
+    #
+    #
+    # final_train_data =  np.ndarray(shape=(10000,32,32,3), dtype=np.uint8, order='F')
+    # final_train_label = []
+    # for i in range(0, 10000):
+    #     final_train_label.append(-1)
+    # cc=0
+    # for k in sorted_x:
+    #     print(k[0])
+    #     print(type(k[0]))
+    #     final_train_label[cc] = trainset.train_labels[k[0]]
+    #     final_train_data[cc] = trainset.train_data[k[0]]
+    #     cc += 1
+    # haha = final_train_data.reshape(10000, 32, 32 ,3)
+    # print (haha)
+    # print("")
     # trainset.train_data = final_train_data
     # trainset.train_labels = final_train_label
+    # trainloader = data.DataLoader(trainset, batch_size=args.train_batch, shuffle=False, num_workers=args.workers)
+    #
+    # version = 'v4'
+    # ddata, labb = load_new_test_data(version)
+    # testset.test_labels = labb
+    # ddata_list = ddata.tolist()
+    # ddata_array = np.asarray(ddata_list, dtype=np.int64)
+    # ddata_array.reshape(2021,32,32,3)
+    # testset.test_data = ddata_array
+    #
+    #
+    # testloader = data.DataLoader(testset, batch_size=args.test_batch, shuffle=False, num_workers=args.workers)
+
 
 
 
@@ -443,27 +435,27 @@ def main():
 
 
     #train again
-    for epoch in range(start_epoch, 1):
-        adjust_learning_rate(optimizer, epoch)
-
-        print('\nEpoch: [%d | %d] LR: %f' % (epoch + 1, args.epochs, state['lr']))
-
-        train_loss, train_acc = train(trainloader, model, criterion, optimizer, epoch, use_cuda)
-        test_loss, test_acc, dict = test(testloader, model, criterion, epoch, use_cuda)
-
-        # append logger file
-        logger.append([state['lr'], train_loss, test_loss, train_acc, test_acc])
-
-        # save model
-        is_best = test_acc > best_acc
-        best_acc = max(test_acc, best_acc)
-        save_checkpoint({
-                'epoch': epoch + 1,
-                'state_dict': model.state_dict(),
-                'acc': test_acc,
-                'best_acc': best_acc,
-                'optimizer' : optimizer.state_dict(),
-            }, is_best, checkpoint=args.checkpoint)
+    # for epoch in range(start_epoch, 1):
+    #     adjust_learning_rate(optimizer, epoch)
+    #
+    #     print('\nEpoch: [%d | %d] LR: %f' % (epoch + 1, args.epochs, state['lr']))
+    #
+    #     train_loss, train_acc = train(trainloader, model, criterion, optimizer, epoch, use_cuda)
+    #     test_loss, test_acc, dict = test(testloader, model, criterion, epoch, use_cuda)
+    #
+    #     # append logger file
+    #     logger.append([state['lr'], train_loss, test_loss, train_acc, test_acc])
+    #
+    #     # save model
+    #     is_best = test_acc > best_acc
+    #     best_acc = max(test_acc, best_acc)
+    #     save_checkpoint({
+    #             'epoch': epoch + 1,
+    #             'state_dict': model.state_dict(),
+    #             'acc': test_acc,
+    #             'best_acc': best_acc,
+    #             'optimizer' : optimizer.state_dict(),
+    #         }, is_best, checkpoint=args.checkpoint)
     logger.close()
     logger.plot()
     savefig(os.path.join(args.checkpoint, 'log.eps'))
@@ -550,7 +542,7 @@ def test(testloader, model, criterion, epoch, use_cuda):
 
         # compute output
         outputs = model(inputs)
-        dict[batch_idx] = softmax(outputs)
+        # dict[batch_idx] = softmax(outputs)
 
         loss = criterion(outputs, targets)
 
@@ -578,7 +570,7 @@ def test(testloader, model, criterion, epoch, use_cuda):
                     )
         bar.next()
     bar.finish()
-    return (losses.avg, top1.avg,dict)
+    return (losses.avg, top1.avg)
 import torch.nn.functional as F
 
 def softmax(x):
