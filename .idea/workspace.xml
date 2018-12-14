@@ -10,15 +10,36 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="lol">
+      <favorite_root url="file://$PROJECT_DIR$/cifar.py" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+      <favorite_root url="file://$PROJECT_DIR$/test.py" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+      <favorite_root url="file://$PROJECT_DIR$/utils/__init__.py" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+      <favorite_root url="file:///Library/Python/2.7/site-packages/torch/utils/data/dataloader.py" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+      <favorite_root url="file:///System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/multiprocessing/queues.py" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+    </favorites_list>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cifar.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1161">
-              <caret line="211" column="47" lean-forward="true" selection-start-line="211" selection-start-column="47" selection-end-line="211" selection-end-column="47" />
+            <state relative-caret-position="832">
+              <caret line="557" column="18" lean-forward="true" selection-start-line="557" selection-start-column="18" selection-end-line="557" selection-end-column="18" />
               <folding>
                 <element signature="e#70#107#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="35" lean-forward="true" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+              <folding>
+                <element signature="e#20#39#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -39,7 +60,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/multiprocessing/queues.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
+            <state relative-caret-position="5460">
               <caret line="377" selection-start-line="377" selection-end-line="377" />
             </state>
           </provider>
@@ -48,7 +69,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file:///Library/Python/2.7/site-packages/torch/utils/data/dataloader.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
+            <state relative-caret-position="3150">
               <caret line="226" selection-start-line="226" selection-end-line="226" />
             </state>
           </provider>
@@ -71,12 +92,16 @@
       <find>pd</find>
       <find>cuda</find>
       <find>train</find>
-      <find>test</find>
       <find>toli</find>
       <find>net</find>
       <find>np</find>
       <find>assarray</find>
       <find>dict</find>
+      <find>progre</find>
+      <find>test</find>
+      <find>save_checkpoint</find>
+      <find>bar</find>
+      <find>args.ep</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -85,18 +110,16 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/utils/__init__.py" />
         <option value="$PROJECT_DIR$/CIFAR-10.1-master/notebooks/test.py" />
         <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/utils/__init__.py" />
         <option value="$PROJECT_DIR$/cifar.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="20" />
-    <option name="y" value="43" />
-    <option name="width" value="1400" />
-    <option name="height" value="785" />
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -104,34 +127,18 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="pytorch-classification-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pytorch-classification-master" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pytorch-classification-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pytorch-classification-master" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pytorch-classification-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pytorch-classification-master" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-              <item name="cifar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pytorch-classification-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pytorch-classification-master" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="testBigDataProj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testBigDataProj" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -155,7 +162,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test (1)">
+  <component name="RunManager" selected="Python.debuggg">
     <configuration name="cifar" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="pytorch-classification-master" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -276,14 +283,14 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32650602" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49964765" weight="0.32650602" />
       <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3987952" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5003524" side_tool="true" weight="0.32650602" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -299,31 +306,6 @@
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/cifar.py</url>
-          <line>543</line>
-          <option name="timeStamp" value="45" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/cifar.py</url>
-          <line>546</line>
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/cifar.py</url>
-          <line>534</line>
-          <option name="timeStamp" value="47" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/cifar.py</url>
-          <line>536</line>
-          <option name="timeStamp" value="48" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/cifar.py</url>
-          <line>540</line>
-          <option name="timeStamp" value="49" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
           <line>3</line>
           <option name="timeStamp" value="53" />
@@ -335,23 +317,33 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/cifar.py</url>
-          <line>575</line>
-          <option name="timeStamp" value="56" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/cifar.py</url>
-          <line>458</line>
+          <line>596</line>
           <option name="timeStamp" value="60" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/cifar.py</url>
-          <line>209</line>
+          <line>347</line>
           <option name="timeStamp" value="61" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/cifar.py</url>
-          <line>414</line>
+          <line>552</line>
           <option name="timeStamp" value="63" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/cifar.py</url>
+          <line>144</line>
+          <option name="timeStamp" value="64" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/cifar.py</url>
+          <line>349</line>
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/cifar.py</url>
+          <line>561</line>
+          <option name="timeStamp" value="66" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -421,16 +413,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9060">
           <caret line="621" selection-start-line="621" selection-end-line="621" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="e#20#39#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -519,14 +501,14 @@
     </entry>
     <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/multiprocessing/queues.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
+        <state relative-caret-position="5460">
           <caret line="377" selection-start-line="377" selection-end-line="377" />
         </state>
       </provider>
     </entry>
     <entry file="file:///Library/Python/2.7/site-packages/torch/utils/data/dataloader.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
+        <state relative-caret-position="3150">
           <caret line="226" selection-start-line="226" selection-end-line="226" />
         </state>
       </provider>
@@ -541,10 +523,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/utils/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="35" lean-forward="true" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+          <folding>
+            <element signature="e#20#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/cifar.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1161">
-          <caret line="211" column="47" lean-forward="true" selection-start-line="211" selection-start-column="47" selection-end-line="211" selection-end-column="47" />
+        <state relative-caret-position="832">
+          <caret line="557" column="18" lean-forward="true" selection-start-line="557" selection-start-column="18" selection-end-line="557" selection-end-column="18" />
           <folding>
             <element signature="e#70#107#0" expanded="true" />
           </folding>
