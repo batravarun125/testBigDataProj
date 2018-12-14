@@ -251,6 +251,7 @@ def test(testloader, model, criterion, epoch, use_cuda):
     # switch to evaluate mode
     model.eval()
     dict = {}
+    idx = 0
     end = time.time()
     bar = Bar('Processing', max=len(testloader))
     for batch_idx, (inputs, targets) in enumerate(testloader):
@@ -263,7 +264,13 @@ def test(testloader, model, criterion, epoch, use_cuda):
 
         # compute output
         outputs = model(inputs)
-        dict[batch_idx] = softmax(outputs)
+        print((outputs.shape))
+        # print("bc")
+        ans = softmax(outputs)
+        for i in range(outputs.shape[0]):
+
+            dict[idx] = ans[i].max().item()
+            idx += 1
 
         loss = criterion(outputs, targets)
 
@@ -296,7 +303,8 @@ import torch.nn.functional as F
 
 def softmax(x):
     a = F.softmax(x,dim=1)
-    return a.max().item()
+
+    return a
 
 
 def save_checkpoint(state, is_best, checkpoint='checkpoint', filename='checkpoint.pth.tar'):
@@ -439,7 +447,7 @@ def main():
     # testset.test_data = ddata_right_ndarray
 
     ddata, labb = load_new_test_data(version)
-    testloader = data.DataLoader(trainset, batch_size=1, shuffle=False, num_workers=args.workers)
+    testloader = data.DataLoader(trainset, batch_size=args.test_batch, shuffle=False, num_workers=args.workers)
     # Model
 
     print("==> creating model '{}'".format(args.arch))
@@ -506,7 +514,7 @@ def main():
         return
     dict = {}
     # Train and val
-    for epoch in range(start_epoch, 1):
+    for epoch in range(start_epoch, args.epochs):
         adjust_learning_rate(optimizer, epoch)
 
         print('\nEpoch: [%d | %d] LR: %f' % (epoch + 1, args.epochs, state['lr']))

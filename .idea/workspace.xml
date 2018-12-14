@@ -24,8 +24,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cifar.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="832">
-              <caret line="557" column="18" lean-forward="true" selection-start-line="557" selection-start-column="18" selection-end-line="557" selection-end-column="18" />
+            <state relative-caret-position="-6044">
+              <caret line="186" column="4" selection-start-line="186" selection-start-column="4" selection-end-line="186" selection-end-column="4" />
               <folding>
                 <element signature="e#70#107#0" expanded="true" />
               </folding>
@@ -102,6 +102,11 @@
       <find>save_checkpoint</find>
       <find>bar</find>
       <find>args.ep</find>
+      <find>batch</find>
+      <find>batch_si</find>
+      <find>batch_i</find>
+      <find>softmax</find>
+      <find>trainloa</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -315,36 +320,6 @@
           <line>8</line>
           <option name="timeStamp" value="55" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/cifar.py</url>
-          <line>596</line>
-          <option name="timeStamp" value="60" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/cifar.py</url>
-          <line>347</line>
-          <option name="timeStamp" value="61" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/cifar.py</url>
-          <line>552</line>
-          <option name="timeStamp" value="63" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/cifar.py</url>
-          <line>144</line>
-          <option name="timeStamp" value="64" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/cifar.py</url>
-          <line>349</line>
-          <option name="timeStamp" value="65" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/cifar.py</url>
-          <line>561</line>
-          <option name="timeStamp" value="66" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
@@ -535,8 +510,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cifar.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="832">
-          <caret line="557" column="18" lean-forward="true" selection-start-line="557" selection-start-column="18" selection-end-line="557" selection-end-column="18" />
+        <state relative-caret-position="-6044">
+          <caret line="186" column="4" selection-start-line="186" selection-start-column="4" selection-end-line="186" selection-end-column="4" />
           <folding>
             <element signature="e#70#107#0" expanded="true" />
           </folding>
